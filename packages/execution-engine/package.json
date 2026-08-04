@@ -1,0 +1,25 @@
+{
+  "name": "@workflowcore/execution-engine",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Durable workflow execution state machine and orchestration logic.",
+  "license": "MIT",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "lint": "eslint . --max-warnings=0",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "echo \"no tests yet\" && exit 0",
+    "clean": "rimraf dist"
+  },
+  "dependencies": {
+    "@workflowcore/event-contracts": "workspace:*",
+    "@workflowcore/shared-types": "workspace:*",
+    "@workflowcore/workflow-definition": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.2"
+  }
+}

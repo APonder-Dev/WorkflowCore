@@ -1,0 +1,12 @@
+# Placeholder scrape config. No services expose /metrics yet — that lands in
+# Phase 13 (Observability). This file exists so `docker compose up` starts
+# Prometheus cleanly; scrape targets are added as each service instruments
+# itself.
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+scrape_configs:
+  - job_name: prometheus
+    static_configs:
+      - targets: ["localhost:9090"]

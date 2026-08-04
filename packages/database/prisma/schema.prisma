@@ -1,0 +1,22 @@
+// WorkflowCore database schema.
+//
+// Phase 1 scope: generator/datasource wiring only, to prove the Prisma
+// toolchain (validate/generate/migrate) works end to end in CI.
+//
+// The full domain model (User, Organization, Membership, Workflow,
+// WorkflowVersion, WorkflowNode, WorkflowEdge, WorkflowExecution,
+// NodeExecution, ExecutionCheckpoint, Credential, WebhookEndpoint,
+// WebhookDelivery, Schedule, Worker, BackgroundJob, AuditEvent, etc.) is
+// added in Phase 3 (Database Model).
+//
+// See: ROADMAP.md, docs/adr/0001-initial-architecture-and-stack.md
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/client"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}

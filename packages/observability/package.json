@@ -1,0 +1,23 @@
+{
+  "name": "@workflowcore/observability",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Structured logging, distributed tracing, and metrics helpers (OpenTelemetry/Prometheus).",
+  "license": "MIT",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "lint": "eslint . --max-warnings=0",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "echo \"no tests yet\" && exit 0",
+    "clean": "rimraf dist"
+  },
+  "dependencies": {
+    "@opentelemetry/api": "^1.9.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.2"
+  }
+}

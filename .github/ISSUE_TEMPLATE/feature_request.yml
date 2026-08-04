@@ -1,0 +1,47 @@
+name: Feature request
+description: Propose new functionality for WorkflowCore
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What need or gap does this address?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+    validations:
+      required: true
+  - type: dropdown
+    id: phase
+    attributes:
+      label: Relevant roadmap phase
+      description: See ROADMAP.md
+      options:
+        - "1 - Monorepo foundation"
+        - "2 - Workflow schema"
+        - "3 - Database model"
+        - "4 - Execution state machine"
+        - "5 - Queue and workers"
+        - "6 - Manual workflow execution"
+        - "7 - Webhook triggers"
+        - "8 - Scheduler"
+        - "9 - Built-in nodes"
+        - "10 - Credentials"
+        - "11 - Node SDK"
+        - "12 - Web application"
+        - "13 - Observability"
+        - "14 - Hardening"
+        - "15 - Deployment"
+        - "Not roadmap-aligned / new scope"
+    validations:
+      required: false
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+    validations:
+      required: false

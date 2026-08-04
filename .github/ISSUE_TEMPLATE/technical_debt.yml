@@ -1,0 +1,23 @@
+name: Technical debt
+description: Track refactoring, cleanup, or deferred work
+labels: ["tech-debt"]
+body:
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: What was deferred or done pragmatically, and where (file/package)?
+    validations:
+      required: true
+  - type: textarea
+    id: risk
+    attributes:
+      label: Risk of leaving as-is
+    validations:
+      required: false
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed cleanup
+    validations:
+      required: false

@@ -1,0 +1,29 @@
+name: Release
+
+# Placeholder release pipeline for Phase 1. There is no published package
+# registry or container registry target yet (see Phase 15 — Deployment in
+# ROADMAP.md); this workflow currently only verifies that a tagged commit
+# builds and passes tests, and is otherwise triggerable manually.
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+  workflow_dispatch: {}
+
+jobs:
+  verify:
+    name: Verify release build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm build
+      - run: pnpm test
+      # TODO(Phase 15): build and publish versioned Docker images per app,
+      # attach artifacts to the GitHub Release.
